@@ -18,6 +18,11 @@ More information can be found on GitHub in the `releases section
 Version History
 ===============
 
+2.1.11 FORK
+    * Remove AUR support
+    * README update
+    * Update cookiecutter.json
+
 2.1.10
     * Update © dates to 2019
 

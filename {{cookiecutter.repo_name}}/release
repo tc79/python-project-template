@@ -1,6 +1,6 @@
 #!/bin/zsh
 # The Release Script
-# Part of the Python Project Template.
+# Based on the Python Project Template.
 # Copyright © 2013-2019, Chris Warrick.
 # All rights reserved.
 #
@@ -104,6 +104,7 @@ cat > $cmfn <<EOF
 #~ You may use reST formatting in the latter.
 #~ Please make the first line of your commit message short.
 #~ The second line of multi-line commits should be empty.
+#~ Delete this intro before committing!
 
 #~ COMMIT MESSAGE START ~#
 #~version~#
@@ -154,14 +155,15 @@ if [[ $? != 0 ]]; then
     exit 1
 fi
 
-if [[ -e tests ]]; then
-    status 'Running tests...'
-    pytest tests/
-    if [[ $? != 0 ]]; then
-        error "Tests failed.  Fix your code or don't come back."
-        exit 1
-    fi
-fi
+# Disabling test checker for now 
+# if [[ -e tests ]]; then
+#     status 'Running tests...'
+#     pytest tests/
+#     if [[ $? != 0 ]]; then
+#         error "Tests failed.  Fix your code or don't come back."
+#         exit 1
+#     fi
+# fi
 
 status 'Running pre-sdist.hook...'
 
@@ -170,14 +172,11 @@ status 'Running pre-sdist.hook...'
 status 'This is the last chance to quit.  Hit ^C now if you want to.'
 read bailout
 
-./setup.py sdist bdist_wheel || exit $?
-twine upload -s dist/$PROJECTLC-$version.tar.gz dist/$PROJECTLC-$version*.whl || exit $?
+# ./setup.py sdist bdist_wheel || exit $?
+# Not uploading to pypi.org
+# twine upload -s dist/$PROJECTLC-$version.tar.gz dist/$PROJECTLC-$version*.whl || exit $?
 
-if [[ -e PKGBUILD ]]; then
-    status 'Updating AUR PKGBUILDs...'
-    md5out=$(md5sum 'dist/'$PROJECTLC'-'$version'.tar.gz'|awk '{print $1}')
-    sed "s/md5sums=.*/md5sums=('$md5out')/" PKGBUILD -i
-fi
+# TO DO zippapp
 
 cleanup
 
