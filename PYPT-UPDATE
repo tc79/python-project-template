@@ -1,13 +1,13 @@
 # #!/usr/bin/env zsh
-# PYPT_ROOT=mnt/c/Users/tchiavegatti/scripts/python-project-template/{{cookiecutter.repo_name}}
-# PYPT_COMPONENTS=(release .pypt/commitlog .pypt/ghrel)
-# PYPT_PROJECTS=("$HOME/git/pkgbuilder")  # fill in your own
+PYPT_ROOT=mnt/c/Users/tchiavegatti/scripts/python-project-template/{{cookiecutter.repo_name}}
+PYPT_COMPONENTS=(release .pypt/commitlog .pypt/ghrel)
+PYPT_PROJECTS=("mnt/c/Users/tchiavegatti/scripts/git/pkgbuilder")  # fill in your own
 
 
-# for p in $PYPT_PROJECTS; do
-#     echo "==> $p"
-#     for c in $PYPT_COMPONENTS; do
-#         cp -v $PYPT_ROOT/$c $p/$c
-#     done
-# done
+for p in $PYPT_PROJECTS; do
+     echo "==> $p"
+     for c in $PYPT_COMPONENTS; do
+         cp -v $PYPT_ROOT/$c $p/$c
+     done
+ done
 
