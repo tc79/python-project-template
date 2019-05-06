@@ -1,3 +1,4 @@
 {
+  "python-project-template/{{cookiecutter.repo_name}}/tests/test_sanity.py": true,
   "{{cookiecutter.repo_name}}/tests/test_sanity.py": true
 }

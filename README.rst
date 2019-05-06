@@ -20,14 +20,11 @@ Python Project Template is made possible by `Cookiecutter
 also need:
 
 * ``zsh`` installed (required by ``/release`` and ``/.pypt/localegen`` scripts)
-* Python with ``requests`` (required by ``/.pypt/{commitlog,ghrel}``) and
-  ``twine`` (required by ``/release``)
-  installed, as well as ``pytest``, ``coverage`` and ``pytest-cov`` — run ``pip
+* Python with ``requests`` (required by ``/.pypt/{commitlog,ghrel}``) installed, as well as ``pytest``, ``coverage`` and ``pytest-cov`` — run ``pip
   install -r requirements.txt`` to install everything
 * A place to host Git repositories. GitHub is assumed, but can be changed
   (documented below)
 * PGP/GPG setup (for signing release commits and tags)
-* Travis CI account (if you do not want Travis CI, remove ``/.travis.yml``)
 
 Template contents
 =================
@@ -52,8 +49,6 @@ The template contains the following files to get you started:
 * Entry points configuration ready to be uncommented (and a matching
   ``__main__.py`` file)
 * Add-ons for Qt users (in ``pypt-extras/Qt``)
-* A sample hook for AUR updates (in ``pypt-extras/AUR``)
-* PKGBUILDs for the Arch Linux User Repository (AUR)
 * A state-of-the-art ``release`` script, the operations of which are:
 
   * querying the user for version number, commit message and changes

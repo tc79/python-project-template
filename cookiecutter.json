@@ -1,6 +1,8 @@
 {
     "full_name": "Tiago Chiavegatti",
     "email": "tchiavegatti@consultaxe.com",
+    "company": "Consultaxe",
+    "aur_email": "not@using.aur",
     "github_username": "tc79",
     "project_name": "Python Project Template",
     "repo_name": "pypt",
